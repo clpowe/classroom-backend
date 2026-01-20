@@ -1,14 +1,13 @@
-import express from "express";
+import { eq } from 'drizzle-orm';
+import { db } from './db';
 
-const app = express();
-const PORT = 8000;
+async function main() {
+    try {
+        console.log('Performing CRUD operations...');
+    } catch (error) {
+        console.error('❌ Error performing CRUD operations:', error);
+        process.exit(1);
+    }
+}
 
-app.use(express.json());
-
-app.get("/", (req, res) => {
-    res.send("Hello from Classroom Backend!");
-});
-
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+main();
