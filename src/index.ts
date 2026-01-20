@@ -1,13 +1,30 @@
-import { eq } from 'drizzle-orm';
-import { db } from './db';
+import express from "express";
+import subjectsRouter from "./routes/subjects";
+import cors from "cors";
 
-async function main() {
-    try {
-        console.log('Performing CRUD operations...');
-    } catch (error) {
-        console.error('❌ Error performing CRUD operations:', error);
-        process.exit(1);
-    }
+const app = express();
+const PORT = 8000;
+
+if (!process.env.FRONTEND_URL) {
+  throw new Error("FRONTEND_URL environment variable is not set");
 }
 
-main();
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  }),
+);
+
+app.use(express.json());
+
+app.use("/api/subjects", subjectsRouter);
+
+app.get("/", (req, res) => {
+  res.send("Hello, welcome to the Classroom API");
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running at http://localhost:${PORT}`);
+});
