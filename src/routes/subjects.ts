@@ -60,8 +60,6 @@ router.get("/", async (req, res) => {
       .limit(limitPerPage)
       .offset(offset);
 
-    console.log("Things:", subjectsList);
-
     res.status(200).json({
       data: subjectsList,
       pagination: {

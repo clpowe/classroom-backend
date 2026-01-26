@@ -15,6 +15,13 @@
       "when": 1769423327852,
       "tag": "0001_conscious_puppet_master",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1769427349582,
+      "tag": "0002_giant_robbie_robertson",
+      "breakpoints": true
     }
   ]
 }
