@@ -8,6 +8,13 @@
       "when": 1768910577439,
       "tag": "0000_quiet_piledriver",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1769423327852,
+      "tag": "0001_conscious_puppet_master",
+      "breakpoints": true
     }
   ]
 }
