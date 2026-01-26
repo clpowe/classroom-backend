@@ -2,9 +2,7 @@
   "compilerOptions": {
     /* Language & runtime */
     "target": "ES2022",
-    "lib": [
-      "ES2022"
-    ],
+    "lib": ["ES2022"],
     /* Node ESM */
     "module": "ES2022",
     "moduleResolution": "node",
@@ -23,11 +21,7 @@
     /* Performance */
     "skipLibCheck": true,
     /* Environment types */
-    "types": [
-      "node"
-    ]
+    "types": ["node"],
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"],
 }

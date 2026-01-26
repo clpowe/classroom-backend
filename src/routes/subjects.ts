@@ -1,5 +1,6 @@
-import { and, eq, getTableColumns, ilike, or, sql } from "drizzle-orm";
 import express from "express";
+import { eq, ilike, or, and, desc, sql, getTableColumns } from "drizzle-orm";
+
 import { departments, subjects } from "../db/schema";
 import { db } from "../db";
 
@@ -32,8 +33,7 @@ router.get("/", async (req, res) => {
 
     // If department query exists, filter by department name
     if (department) {
-      const deptPattern = `%${String(department).replace(/[%_]/g, "\\$&")}%`;
-      filterConditions.push(ilike(departments.name, deptPattern));
+      filterConditions.push(ilike(departments.name, `%${department}%`));
     }
 
     // Combine all filters using AND if any exist
