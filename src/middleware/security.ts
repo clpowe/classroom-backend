@@ -49,7 +49,7 @@ export const securityMiddleware = async (
       },
     };
 
-    const decision = await client.project(arcjetRequest);
+    const decision = await client.protect(arcjetRequest);
 
     if (decision.isDenied() && decision.reason.isBot()) {
       return res.status(403).json({
