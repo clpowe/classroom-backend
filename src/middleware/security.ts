@@ -2,7 +2,19 @@ import { slidingWindow } from "@arcjet/node";
 import type { ArcjetNodeRequest } from "@arcjet/node";
 import type { NextFunction, Request, Response } from "express";
 
+declare global {
+  namespace Express {
+    interface Request {
+      user?: {
+        role: "admin" | "teacher" | "student" | "guest";
+      };
+    }
+  }
+}
+
 import aj from "../config/arcjet.js";
+
+type RateLimitRole = "admin" | "teacher" | "student" | "guest";
 
 const securityMiddleware = async (
   req: Request,
