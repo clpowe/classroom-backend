@@ -1,6 +1,11 @@
 {
   "name": "classroom-backend",
   "version": "1.0.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
