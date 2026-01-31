@@ -1,5 +1,5 @@
 {
     "licenseKey": "us_2d0225b3e24de50941f549b6e8a5c8e5",
-    "appName": "classroom-backend",
-    "port": 10000
+    "appName": "classroom_backend",
+    "port": 8000
 }
